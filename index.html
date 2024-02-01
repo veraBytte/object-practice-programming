@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+  <body>
+    <main>
+      <h1>Mini Platzi</h1>
+      <section class="home">
+      
+        <label for="student">
+          <img class="image-preview__radio-button" src="./assets/6737457.jpg" alt="student">
+        </label>
+        <input onclick="dispelSection()" class="radio-button" type="radio" id="student" name="opciones-usuario" value="student"/>
+        <label for="admin">
+          <img class="image-preview__radio-button" src="./assets/19198757.jpg" alt="administrador">
+        </label>
+        <input  onclick="dispelSection()" class="radio-button" type="radio" id="admin" name="opciones-usuario" value="administrador"/>
+        <label for="statistics">
+          <img class="image-preview__radio-button" src="./assets/Charts_Freepik.jpg" alt="estadisticas">
+        </label>
+        <input  onclick="dispelSection()" class="radio-button" type="radio" name="opciones-usuario" id="statistics" value="estadisticas"/>
+      </section>
+    </main>
+
+    <script defer type="module" src="/main.js"></script>
+  </body>
+</html>

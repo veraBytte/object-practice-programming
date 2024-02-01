@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+main{
+    height: 100vh;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    transition: 1s;
+}
+
+.image-preview__radio-button{
+    aspect-ratio: 1/1;
+    width: 300px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.6s;
+
+    &:hover{
+        transition: 0.6s;
+        transform: scale(1.1);
+        border: 2px solid black;
+    }
+}
+
+.radio-button{
+    display: none;
+}
