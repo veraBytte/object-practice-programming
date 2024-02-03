@@ -1,41 +1,33 @@
-const sectionHome = document.querySelector(".home")
+import {Student} from './classes/Student.js'
+import { students } from './data/students.js'
 
-let start;
-let elapsed;
-let duration = 1000; // Duración de la animación en milisegundos
+const sectionHome = document.querySelector(".home")
+const sectionStudent = document.querySelector(".student-panel")
+const btnNav = document.querySelector(".btn-navigator")
+const btnNewStudent = document.querySelector(".btn-crear-student")
+
+const studentForm = document.querySelector(".student-form")
+const inputFieldsStudentForm = studentForm.querySelectorAll("input")
+
 
 window.dispelSection = () => {
-    requestAnimationFrame(bounce);
+    sectionHome.classList.add('animate');
+    sectionStudent.classList.add('animate');
 }
 
-function bounce(timestamp) {
-    if (!start) start = timestamp;
-    elapsed = timestamp - start;
+btnNav.addEventListener('click', () => {
+    sectionHome.classList.remove('animate');
+    sectionStudent.classList.remove('animate');
+})
 
-    // Calcula la posición del elemento en base al tiempo transcurrido
-    let position = Math.abs(Math.sin(elapsed / duration * Math.PI * 2)) * 200;
+btnNewStudent.addEventListener('click', () => {
+    try {
+        const student = new Student({name: inputFieldsStudentForm[0].value, lastName: inputFieldsStudentForm[1].value, age: inputFieldsStudentForm[2].value, email: inputFieldsStudentForm[3].value})
 
-    // Aplica la posición al elemento
-    sectionHome.style.transform = `translateX(${position}%)`;
+        console.log(student);
+        students.push(student);
 
-    // Si la animación aún no ha terminado, solicita el próximo cuadro
-    if (elapsed < duration) {
-        requestAnimationFrame(bounce);
+    } catch (error) {
+        console.error(`Hubo un error en el formulario: ${error}`);
     }
-}
-
-function fadeIn(timestamp) {
-    if (!start) start = timestamp;
-    elapsed = timestamp - start;
-
-    // Calcula la opacidad del elemento en base al tiempo transcurrido
-    let opacity = elapsed / duration;
-
-    // Aplica la opacidad al elemento
-    sectionHome.style.opacity = opacity;
-
-    // Si la animación aún no ha terminado, solicita el próximo cuadro
-    if (elapsed < duration) {
-        requestAnimationFrame(fadeIn);
-    }
-}
+})

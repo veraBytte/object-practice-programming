@@ -9,20 +9,72 @@
   <body>
     <main>
       <h1>Mini Platzi</h1>
-      <section class="home">
-      
-        <label for="student">
-          <img class="image-preview__radio-button" src="https://i.postimg.cc/XNs2FP4m/6737457.jpg" alt="student">
-        </label>
-        <input onclick="dispelSection()" class="radio-button" type="radio" id="student" name="opciones-usuario" value="student"/>
-        <label for="admin">
-          <img class="image-preview__radio-button" src="https://i.postimg.cc/zvQ6k2ZC/19198757.jpg" alt="administrador">
-        </label>
-        <input  onclick="dispelSection()" class="radio-button" type="radio" id="admin" name="opciones-usuario" value="administrador"/>
-        <label for="statistics">
-          <img class="image-preview__radio-button" src="https://i.postimg.cc/G3TQ8mg8/Charts-Freepik.jpg" alt="estadisticas">
-        </label>
-        <input  onclick="dispelSection()" class="radio-button" type="radio" name="opciones-usuario" id="statistics" value="estadisticas"/>
+      <button class="btn-navigator">Arriba</button>
+
+      <section class="container">
+        <article class="home">
+        
+          <label for="student">
+            <img class="image-preview__radio-button" src="https://i.postimg.cc/XNs2FP4m/6737457.jpg" alt="student">
+          </label>
+          <input onclick="dispelSection()" class="radio-button" type="radio" id="student" name="opciones-usuario" value="student"/>
+          <label for="admin">
+            <img class="image-preview__radio-button" src="https://i.postimg.cc/zvQ6k2ZC/19198757.jpg" alt="administrador">
+          </label>
+          <input  onclick="dispelSection()" class="radio-button" type="radio" id="admin" name="opciones-usuario" value="administrador"/>
+          <label for="statistics">
+            <img class="image-preview__radio-button" src="https://i.postimg.cc/G3TQ8mg8/Charts-Freepik.jpg" alt="estadisticas">
+          </label>
+          <input  onclick="dispelSection()" class="radio-button" type="radio" name="opciones-usuario" id="statistics" value="estadisticas"/>
+        </article>
+
+        <article class="student-panel">
+          <h2>Nueva seccion</h2>
+          <p> Crea un estudiante </p>
+
+<article class="student-panel">
+  <h2>Nueva seccion</h2>
+  <p>Crea un estudiante</p>
+
+  <form class="student-form">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+    </div>
+
+    <div>
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" required>
+    </div>
+
+    <div>
+      <label for="edad">Fecha de nacimiento:</label>
+      <input type="date" id="edad" name="edad" required>
+    </div>
+
+    <div>
+      <label for="correo">Correo:</label>
+      <input type="email" id="correo" name="correo" required>
+    </div>
+    <button class="btn-crear-student">crear</button>
+  </form>
+  <article>
+    <h2>Estudiantes</h2>
+    <template id="student-template">
+      <ul class="students-list">
+        <li class="student-item">
+          <p>Nombre: <span class="student-name"></span></p>
+          <p>Apellido: <span class="student-lastname"></span></p>
+          <p>Edad: <span class="student-age"></span></p>
+          <p>Correo: <span class="student-email"></span></p>
+        </li>
+      </ul>
+    </template>
+  </article>
+</article>
+          
+
+        </article>
       </section>
     </main>
 
