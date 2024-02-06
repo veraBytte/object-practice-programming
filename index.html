@@ -1,83 +1,112 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <link rel="stylesheet" href="./styles/style.css">
-  </head>
-  <body>
-    <main>
-      <h1>Mini Platzi</h1>
-      <button class="btn-navigator">Arriba</button>
 
-      <section class="container">
-        <article class="home">
-        
-          <label for="student">
-            <img class="image-preview__radio-button" src="https://i.postimg.cc/XNs2FP4m/6737457.jpg" alt="student">
-          </label>
-          <input onclick="dispelSection()" class="radio-button" type="radio" id="student" name="opciones-usuario" value="student"/>
-          <label for="admin">
-            <img class="image-preview__radio-button" src="https://i.postimg.cc/zvQ6k2ZC/19198757.jpg" alt="administrador">
-          </label>
-          <input  onclick="dispelSection()" class="radio-button" type="radio" id="admin" name="opciones-usuario" value="administrador"/>
-          <label for="statistics">
-            <img class="image-preview__radio-button" src="https://i.postimg.cc/G3TQ8mg8/Charts-Freepik.jpg" alt="estadisticas">
-          </label>
-          <input  onclick="dispelSection()" class="radio-button" type="radio" name="opciones-usuario" id="statistics" value="estadisticas"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <h1>Mini Platzi</h1>
+    <button class="btn-navigator">Arriba</button>
+
+    <section class="container">
+      <article class="home">
+
+        <label for="student">
+          <img class="image-preview__radio-button" src="https://i.postimg.cc/XNs2FP4m/6737457.jpg" alt="student">
+        </label>
+        <input onclick="dispelSection()" class="radio-button" type="radio" id="student" name="opciones-usuario"
+          value="student" />
+        <label for="admin">
+          <img class="image-preview__radio-button" src="https://i.postimg.cc/zvQ6k2ZC/19198757.jpg" alt="administrador">
+        </label>
+        <input onclick="dispelSection()" class="radio-button" type="radio" id="admin" name="opciones-usuario"
+          value="administrador" />
+        <label for="statistics">
+          <img class="image-preview__radio-button" src="https://i.postimg.cc/G3TQ8mg8/Charts-Freepik.jpg"
+            alt="estadisticas">
+        </label>
+        <input onclick="dispelSection()" class="radio-button" type="radio" name="opciones-usuario" id="statistics"
+          value="estadisticas" />
+      </article>
+
+      <section class="student-panel">
+        <article class="student-info">
+          <form class="student-form">
+            <h2>Bienvenido</h2>
+
+            <div class="field-student-form">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+
+            <div  class="field-student-form">
+              <label for="apellido">Apellido:</label>
+              <input type="text" id="apellido" name="apellido" required>
+            </div>
+
+            <div  class="field-student-form">
+              <label for="edad">Fecha de nacimiento:</label>
+              <input type="date" id="edad" name="edad" required>
+            </div>
+
+            <div  class="field-student-form">
+              <label for="correo">Correo:</label>
+              <input type="email" id="correo" name="correo" required>
+            </div>
+            <button type="button" class="btn-crear-student">crear</button>
+          </form>
+
+          <template id="student-template">
+            <h2>Información personal</h2>
+            <figure>
+              <img src="https://unavatar.io/github/37t?fallback=https://source.boringavatars.com/marble/120/1337_user?colors=264653r,2a9d8f,e9c46a,f4a261,e76f51" alt="">
+            </figure>
+            <ul class="students-list">
+              <li class="student-item">
+                <p>Nombre: <span class="student-name"></span></p>
+                <p>Apellido: <span class="student-lastname"></span></p>
+                <p>Edad: <span class="student-age"></span></p>
+                <p>Correo: <span class="student-email"></span></p>
+              </li>
+            </ul>
+            <div class="social-media__inputs">
+              <label for="">LinkedIn</label>
+              <input type="text">
+
+              <label for="">Instagram</label>
+              <input type="text">
+              
+              <label for="">Twitter</label>
+              <input type="text">
+            </div>
+
+            <button class="btn-guardar-student">Guardar</button>
+          </template>
         </article>
 
-        <article class="student-panel">
-          <h2>Nueva seccion</h2>
-          <p> Crea un estudiante </p>
-
-<article class="student-panel">
-  <h2>Nueva seccion</h2>
-  <p>Crea un estudiante</p>
-
-  <form class="student-form">
-    <div>
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
-    </div>
-
-    <div>
-      <label for="apellido">Apellido:</label>
-      <input type="text" id="apellido" name="apellido" required>
-    </div>
-
-    <div>
-      <label for="edad">Fecha de nacimiento:</label>
-      <input type="date" id="edad" name="edad" required>
-    </div>
-
-    <div>
-      <label for="correo">Correo:</label>
-      <input type="email" id="correo" name="correo" required>
-    </div>
-    <button class="btn-crear-student">crear</button>
-  </form>
-  <article>
-    <h2>Estudiantes</h2>
-    <template id="student-template">
-      <ul class="students-list">
-        <li class="student-item">
-          <p>Nombre: <span class="student-name"></span></p>
-          <p>Apellido: <span class="student-lastname"></span></p>
-          <p>Edad: <span class="student-age"></span></p>
-          <p>Correo: <span class="student-email"></span></p>
-        </li>
-      </ul>
-    </template>
-  </article>
-</article>
-          
-
+        <article>      
+          <button>Agregar ruta de aprendizaje</button>
+          <select multiple>
+            <option value="opcion1">Opción 1</option>
+            <option value="opcion2">Opción 2</option>
+            <option value="opcion3">Opción 3</option>
+            <option value="opcion4">Opción 4</option>
+          </select>
         </article>
+
       </section>
-    </main>
+    </section>
+  </main>
 
-    <script defer type="module" src="/main.js"></script>
-  </body>
+  <script defer type="module" src="/main.js"></script>
+</body>
+
 </html>

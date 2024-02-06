@@ -8,4 +8,8 @@ export class Student extends User{
         this.LearningPaths = learningPaths;
         this.socialMedia = socialMedia;
     }
+
+    addSocialMedia(linkedin = undefined, twitter  = undefined, instagram  = undefined){
+            this.socialMedia.push(linkedin,twitter,instagram)
+    }
 }
